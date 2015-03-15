@@ -1,3 +1,22 @@
+###
+  Copyright (C) 2015 Juhani Imberg
+
+  This file is part of tito-web.
+
+  tito-web is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  tito-web is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with tito-web. If not, see <http://www.gnu.org/licenses/>.
+###
+
 d = null
 d_l = null
 d_c = null
@@ -77,10 +96,8 @@ updateSelected = () ->
     document.querySelector(".line-" + i).classList.toggle "selected"
 
 tabby = () ->
-  console.log "asdadsdsa"
   ps = d_c.selectionStart
   pe = d_c.selectionEnd
-  console.log ps, pe
   if ps is pe
     line = ""
     cn = 0
@@ -107,7 +124,6 @@ tabby = () ->
     wlines = d_c.value.split('\n')
     wlines[cn] = t[0] + t[1]
     d_c.value = wlines.join('\n')
-    console.log num
 
     d_c.focus()
     d_c.setSelectionRange pe + num, ps + num
