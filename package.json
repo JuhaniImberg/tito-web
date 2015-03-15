@@ -1,0 +1,15 @@
+{
+  "name": "tito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPLv3",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "watchify": "^2.4.0"
+  }
+}

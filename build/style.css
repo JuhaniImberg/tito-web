@@ -1,0 +1,98 @@
+@import url(editor.css);
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;;
+    font-size: 1rem;
+    background-color: #002b36;
+    color: #839496;
+}
+
+.side-right, .side-left {
+    height: calc(100% - 2rem);
+    max-height: calc(100vh - 2rem);
+}
+
+.side-left {
+    overflow-y: auto;
+}
+
+table {
+    margin: 0 0.3rem 0.6rem 0;
+    width: 100%;
+    border: 3px solid #073642;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table>thead {
+    background-color: #073642;
+}
+
+table>thead>tr>th, table>tbody>tr>td {
+    padding: 0.2rem 0.5rem;
+}
+
+table>tbody>tr>td:not(:last-child) {
+    border-right: 3px solid #073642;
+}
+
+table>tbody>tr:not(:last-child) {
+    border-bottom: 3px solid #073642;
+}
+
+.input-field {
+    display: flex;
+    padding: 0.3rem;
+}
+
+.input-field>input {
+    flex: 1;
+    padding: 0.2rem;
+    border: 3px solid #073642;
+    border-left: none;
+    background-color: #002b36;
+}
+
+.input-field>span, button {
+    padding: 0.2rem 0.5rem;
+    border: 3px solid #073642;
+    background-color: #073642;
+}
+
+button {
+    color: inherit;
+    font-size: inherit;
+    margin: 0.3rem;
+}
+
+.toolbar {
+    display: flex;
+}
+
+.toolbar>* {
+    flex: 1;
+}
+
+.world {
+    display: flex;
+}
+
+.world>* {
+    flex: 1;
+    margin: 0.3rem;
+}
+
+.memory-line-selected {
+    background-color: #073642;
+}

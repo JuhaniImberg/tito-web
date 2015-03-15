@@ -1,0 +1,81 @@
+.editor {
+    width: 100%;
+    min-height: 100%;
+    background-color: #002b36;
+    color: #839496;
+    position: relative;
+}
+
+.line_numbers, .code, .display {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    position: absolute;
+    font-size: 13px;
+    width: calc(100% - 32px);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    left: 32px;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.line, .code {
+
+}
+
+.line_numbers {
+    left: 0;
+    background-color: #073642;
+    width: 32px;
+    text-align: right;
+    white-space: pre;
+}
+
+.code {
+    z-index: 2;
+    outline: 0;
+    color: rgba(255, 255, 255, 0.5);
+    resize: none;
+}
+
+.line.selected {
+    background-color: #073642;
+}
+
+.display {
+    white-space: pre;
+}
+
+.syntax {
+    color: rgba(0, 32, 32, 0.423529);
+}
+
+.command {
+    color: rgba(133, 153, 0, 1.000000);
+}
+
+.builtin {
+    color: rgba(181, 137, 0, 1.000000);
+}
+
+.data-command {
+    color: rgba(0, 8, 152, 0.576471);
+}
+
+.register {
+    color: rgba(211, 3, 0, 0.815686);
+}
+
+.comment {
+    color: rgba(0, 33, 44, 0.654902);
+}
+
+.number {
+    color: rgba(198, 0, 96, 0.788235);
+}
+
+.unknown {
+    color: rgba(0, 32, 32, 0.423529);
+}

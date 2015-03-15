@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="bundle.js"></script>
+<div class="world">
+    <div class="side-left">
+        <div id="editor" class="editor">
+            <div class="line_numbers"></div>
+            <div class="display"></div>
+            <textarea class="code" spellcheck="false"></textarea>
+        </div>
+    </div>
+    <div class="side-right">
+
+        <div class="toolbar">
+            <button id="compile">Compile (Ctrl+E)</button>
+            <button id="step">Step (Alt+Enter)</button>
+            <button id="step-all">Step All (Ctrl+Enter)</button>
+        </div>
+
+        <div class="input-field">
+            <span>Input</span>
+            <input type="text" id="input">
+        </div>
+
+        <div class="input-field">
+            <span>Output</span>
+            <input type="text" id="output">
+        </div>
+
+        <div class="world">
+
+            <div>
+                <table id="memory" class="memory">
+                    <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Value</th>
+                        <th>Explanation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+
+                <table id="registers">
+                    <thead>
+                    <tr>
+                        <th>Register</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <table id="symbols">
+                    <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
