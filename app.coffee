@@ -28,7 +28,7 @@ clearOfChildren = (target) ->
   while target.lastChild
     target.removeChild target.lastChild
 
-update_memory = (newmem, selected) ->
+update_memory = (newmem, explains, selected) ->
   target = document.querySelector "#memory tbody"
   clearOfChildren target
 
@@ -43,6 +43,7 @@ update_memory = (newmem, selected) ->
     value_td = document.createElement "td"
     value_td.innerHTML = row
     explanation_td = document.createElement "td"
+    explanation_td.innerHTML = explains[ind]
 
     tr.appendChild ind_td
     tr.appendChild value_td
@@ -99,7 +100,7 @@ compile = () ->
     output_f = document.querySelector "#output"
     output_f.value = ""
 
-    update_memory vm.memory, -1
+    update_memory vm.memory, vm.explains, -1
     update_symbols vm.symbols
     update_registers ["R0", "R1", "R2", "R3", "R4", "R5", "SP", "FP"], vm.registers
 
@@ -110,7 +111,7 @@ compile = () ->
 
     vm.on "step", (v) ->
       output_f.value = v.output.join ", "
-      update_memory v.memory, pos
+      update_memory v.memory, v.explains, pos
       update_symbols v.symbols
       update_registers ["R0", "R1", "R2", "R3", "R4", "R5", "SP", "FP"], v.registers
 

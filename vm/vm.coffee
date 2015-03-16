@@ -24,6 +24,7 @@ events = require "events"
 class VM extends events.EventEmitter
   constructor: () ->
     @memory = []
+    @explains = []
     @commands = []
     @symbols = {}
     @registers = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -56,6 +57,19 @@ class VM extends events.EventEmitter
 
     @registers[6] = data_end
     @registers[7] = code_end
+
+    for line, ind in @memory
+      cmd = new BinaryCommand()
+      register_ind = ["R0", "R1", "R2", "R3", "R4", "R5", "SP", "FP"]
+      cmd.fields["addr"].allow_negative = true
+      cmd.load line
+      cmd_op = reverse_commands[cmd.get "op"]
+      cmd_rj = register_ind[cmd.get("rj")]
+      cmd_ri = register_ind[cmd.get("ri")]
+      cmd_addr = cmd.get "addr"
+      cmd_m = ["=", "", "@"][cmd.get("m")]
+      @explains.push "#{cmd_op} #{cmd_rj}, #{cmd_m}#{cmd_addr}(#{cmd_ri})"
+
 
   get_addr: (command, override=null) ->
     m = if override is null then command.get("m") else override
